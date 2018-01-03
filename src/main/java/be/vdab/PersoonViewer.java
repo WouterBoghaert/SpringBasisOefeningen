@@ -5,25 +5,29 @@ import java.util.List;
 import be.vdab.entities.Persoon;
 
 class PersoonViewer {
-	private final boolean aantalKinderenTonen;
+	private final PersoonEigenschap [] eigenschappen;
 	
-	PersoonViewer(boolean aantalKinderenTonen) {
-		this.aantalKinderenTonen = aantalKinderenTonen;
+	PersoonViewer(PersoonEigenschap [] eigenschappen) {
+		this.eigenschappen = eigenschappen;
 	}
-	
-//	public void setAantalKinderenTonen(boolean aantalKinderenTonen) {
-//		this.aantalKinderenTonen = aantalKinderenTonen;
-//	}
 
 	public void afbeelden(List<Persoon> personen) {
 		for (Persoon persoon : personen) {
-			System.out.println("PersoonNr: \t\t" + persoon.getPersoonNr());
-			System.out.println("Voornaam: \t\t" + persoon.getVoornaam());
-			System.out.println("Familienaam: \t\t" + persoon.getFamilienaam());
-			if(aantalKinderenTonen) {
-				System.out.println("Aantal kinderen: \t" + persoon.getAantalKinderen());
+			for (PersoonEigenschap eigenschap : eigenschappen) {
+				if(eigenschap.equals(PersoonEigenschap.PERSOON_NR)) {
+					System.out.println("PersoonNr: \t\t" + persoon.getPersoonNr());
+				}
+				if(eigenschap.equals(PersoonEigenschap.VOORNAAM)) {
+					System.out.println("Voornaam: \t\t" + persoon.getVoornaam());
+				}
+				if(eigenschap.equals(PersoonEigenschap.FAMILIENAAM)) {
+					System.out.println("Familienaam: \t\t" + persoon.getFamilienaam());
+				}
+				if(eigenschap.equals(PersoonEigenschap.AANTAL_KINDEREN)) {
+					System.out.println("Aantal kinderen: \t" + persoon.getAantalKinderen());
+				}
+				System.out.println();
 			}
-			System.out.println();
 		}
 	}
 }
