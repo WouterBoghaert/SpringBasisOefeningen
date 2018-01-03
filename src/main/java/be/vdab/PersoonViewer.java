@@ -5,11 +5,15 @@ import java.util.List;
 import be.vdab.entities.Persoon;
 
 class PersoonViewer {
-	private boolean aantalKinderenTonen;
+	private final boolean aantalKinderenTonen;
 	
-	public void setAantalKinderenTonen(boolean aantalKinderenTonen) {
+	PersoonViewer(boolean aantalKinderenTonen) {
 		this.aantalKinderenTonen = aantalKinderenTonen;
 	}
+	
+//	public void setAantalKinderenTonen(boolean aantalKinderenTonen) {
+//		this.aantalKinderenTonen = aantalKinderenTonen;
+//	}
 
 	public void afbeelden(List<Persoon> personen) {
 		for (Persoon persoon : personen) {
