@@ -8,6 +8,7 @@
 			<list>
 				<value>VOORNAAM</value>
 				<value>FAMILIENAAM</value>
+				<value>AANTAL_KINDEREN</value>
 			</list>
 		</constructor-arg>
 	</bean>

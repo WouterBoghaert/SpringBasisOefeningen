@@ -26,8 +26,8 @@ class PersoonViewer {
 				if(eigenschap.equals(PersoonEigenschap.AANTAL_KINDEREN)) {
 					System.out.println("Aantal kinderen: \t" + persoon.getAantalKinderen());
 				}
-				System.out.println();
 			}
+			System.out.println();
 		}
 	}
 }
