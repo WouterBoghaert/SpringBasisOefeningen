@@ -1,18 +1,23 @@
 package be.vdab;
 
-import java.util.List;
+import java.io.IOException;
 
 import be.vdab.entities.Persoon;
+import be.vdab.services.PersoonService;
 
 class PersoonViewer {
 	private final PersoonEigenschap [] eigenschappen;
+	private final PersoonService persoonService;
 	
-	PersoonViewer(PersoonEigenschap [] eigenschappen) {
+	PersoonViewer(PersoonEigenschap [] eigenschappen, 
+		PersoonService persoonService) {
 		this.eigenschappen = eigenschappen;
+		this.persoonService = persoonService;
 	}
 
-	public void afbeelden(List<Persoon> personen) {
-		for (Persoon persoon : personen) {
+
+	public void afbeelden() throws IOException {
+		for (Persoon persoon : persoonService.findAll()) {
 			for (PersoonEigenschap eigenschap : eigenschappen) {
 				if(eigenschap.equals(PersoonEigenschap.PERSOON_NR)) {
 					System.out.println("PersoonNr: \t\t" + persoon.getPersoonNr());

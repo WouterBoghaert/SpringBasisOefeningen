@@ -28,6 +28,50 @@ public class Persoon {
 	public int getAantalKinderen() {
 		return aantalKinderen;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + aantalKinderen;
+		result = prime * result + ((familienaam == null) ? 0 : familienaam.hashCode());
+		result = prime * result + persoonNr;
+		result = prime * result + ((voornaam == null) ? 0 : voornaam.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Persoon)) {
+			return false;
+		}
+		Persoon other = (Persoon) obj;
+		if (aantalKinderen != other.aantalKinderen) {
+			return false;
+		}
+		if (familienaam == null) {
+			if (other.familienaam != null) {
+				return false;
+			}
+		} else if (!familienaam.equals(other.familienaam)) {
+			return false;
+		}
+		if (persoonNr != other.persoonNr) {
+			return false;
+		}
+		if (voornaam == null) {
+			if (other.voornaam != null) {
+				return false;
+			}
+		} else if (!voornaam.equals(other.voornaam)) {
+			return false;
+		}
+		return true;
+	}	
 }
