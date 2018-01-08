@@ -7,18 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+/*import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
-
+*/
 import be.vdab.entities.Persoon;
 
-@Qualifier("TXT")
-@Repository
-public class PersoonRepositoryMeerdereRegels implements PersoonRepository {
+/*@Qualifier("TXT")
+@Repository*/
+class PersoonRepositoryMeerdereRegels implements PersoonRepository {
 	private final String bestandsnaam;
 	
-	public PersoonRepositoryMeerdereRegels(@Value("${persoonTXT}") String bestandsnaam) {
+	PersoonRepositoryMeerdereRegels(/*@Value("${persoonTXT}")*/ String bestandsnaam) {
 		this.bestandsnaam = bestandsnaam;
 	}
 	
