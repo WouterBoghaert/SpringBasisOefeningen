@@ -7,12 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
+
 import be.vdab.entities.Persoon;
 
+@Qualifier("CSV")
+@Repository
 public class PersoonRepositoryCSV implements PersoonRepository {
 	private final String bestandsnaam;
 	
-	public PersoonRepositoryCSV(String bestandsnaam) {
+	public PersoonRepositoryCSV(@Value("${persoonCSV}") String bestandsnaam) {
 		this.bestandsnaam = bestandsnaam;
 	}
 	

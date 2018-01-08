@@ -2,14 +2,17 @@ package be.vdab;
 
 import java.io.IOException;
 
+import org.springframework.stereotype.Controller;
+
 import be.vdab.entities.Persoon;
 import be.vdab.services.PersoonService;
 
+@Controller
 class PersoonViewer {
 	private final PersoonEigenschap [] eigenschappen;
 	private final PersoonService persoonService;
 	
-	PersoonViewer(PersoonEigenschap [] eigenschappen, 
+	PersoonViewer (PersoonEigenschap [] eigenschappen, 
 		PersoonService persoonService) {
 		this.eigenschappen = eigenschappen;
 		this.persoonService = persoonService;
